@@ -21,17 +21,13 @@ class FlightSearch():
     def search_flight(self, params):
         response = requests.get(url=f"{self.TEQUILA_API_ENDPOINT}/v2/search", params=params, headers=self.tequila_headers)
         flights = response.json()
-        #print(flights)
         for _ in range(len(flights)):
-            # departure_city = 
-            # arrival_city = flights["data"][_]["cityTo"]
-            # price = flights["data"][_]["price"]
-            # outbound_date = flights["data"][_]["local_arrival"]
+
             return {
                 "departure_city": flights["data"][_]["cityFrom"],
                 "arrival_city": flights["data"][_]["cityTo"],
                 "price": flights["data"][_]["price"],
-                "outbound_date": flights["data"][_]["local_arrival"].split('T')[0]
+                "outbound_date": flights["data"][_]["local_departure"].split('T')[0]
             }
             
 
