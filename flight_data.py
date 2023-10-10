@@ -21,7 +21,3 @@ class FlightData():
         }
     
 
-
-flight_data = FlightData()
-
-print(flight_data.date_to)

@@ -23,3 +23,4 @@ class DataManager:
             }
         }
         response = requests.put(url=f'{self.SHEETY_API}/{id_num}', json=new_data, headers=self.SHEETY_HEADERS)
+        print(response.text)
