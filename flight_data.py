@@ -14,7 +14,7 @@ class FlightData():
         self.return_to = datetime.strftime(self.max_return_date, "%d/%m/%Y")
         self.curr = 'USD'
 
-
+    ##### Create a dictionary for the flight search parameters
     def get_params(self, fly_to):
         return {
             "fly_from": self.departure_airport_code,
